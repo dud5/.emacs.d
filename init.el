@@ -3,7 +3,7 @@
 
 (defvar my-packages '(better-defaults paredit idle-highlight-mode ido-ubiquitous
                                       find-file-in-project magit smex scpaste smooth-scrolling
-                                      expand ace-jump-mode color-theme color-theme-molokai
+                                      expand-region ace-jump-mode color-theme color-theme-molokai
                                       fill-column-indicator))
 
 (package-initialize)
