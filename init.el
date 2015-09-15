@@ -4,7 +4,7 @@
 (defvar my-packages '(better-defaults paredit idle-highlight-mode ido-ubiquitous
                                       find-file-in-project magit smex scpaste smooth-scrolling
                                       expand-region ace-jump-mode color-theme color-theme-molokai
-                                      fill-column-indicator))
+                                      fill-column-indicator projectile))
 
 (package-initialize)
 (dolist (p my-packages)
@@ -34,3 +34,15 @@
 (require 'setup-dired)
 (require 'miscelanea)
 
+
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+              (ggtags-mode 1))))
+
+(global-linum-mode 1)
+(projectile-global-mode)
+(setq-default indent-tabs-mode 1)
+(require 'google-c-style)
+(add-hook 'c-mode-common-hook 'google-set-c-style)
+(add-hook 'c-mode-common-hook 'google-make-newline-indent)
